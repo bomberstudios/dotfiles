@@ -1,3 +1,38 @@
+# Dock: Automatically hide and show
+defaults write com.apple.dock autohide -int 1
+
 # Dock: Make it popup faster
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
+
+# Dock: Position on left side of screen
+defaults write com.apple.dock "orientation" -string "left"
+
+# Dock: Set icon size
+defaults write com.apple.dock "tilesize" -int "42"
+
+# Dock: Restart it to apply changes
+killall Dock
+
+# Disable the character chooser popup when you hold a key
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Scroll bars
+# Possible: "WhenScrolling", "Automatic" and "Always"
+defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
+
+# System Preferences: Trackpad
+# Trackpad: Tap
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# Trackpad: Two-Finger-Tap
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
+
+# Keyboard key repeat
+defaults write -g InitialKeyRepeat -int 15
+defaults write -g KeyRepeat -int 2
