@@ -42,9 +42,12 @@ cask "font-source-code-pro-for-powerline"
 cask "gcc-arm-embedded"
 cask "secretive"
 cask "xcodes"
+mas "Hand Mirror", id: 1502839586
+mas "NextDNS", id: 1464122853
 mas "Keynote", id: 409183694
-mas "Notability", id: 736189492
+mas "Notability", id: 360593530
 mas "NotePlan 3", id: 1505432629
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Shotty", id: 1250306151
+mas "Vinegar", id: 1591303229
