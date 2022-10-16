@@ -1,3 +1,4 @@
+tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
@@ -18,8 +19,12 @@ brew "cvs"
 brew "deno"
 brew "docker-completion"
 brew "ffmpeg"
+brew "gh"
+brew "git"
+brew "hub"
 brew "imapsync"
 brew "libhid"
+brew "mas"
 brew "netcat"
 brew "ninja"
 brew "node"
@@ -33,6 +38,13 @@ brew "qmk/qmk/qmk", link: false
 brew "sidneys/homebrew/unrar"
 cask "android-commandlinetools"
 cask "android-platform-tools"
+cask "font-source-code-pro-for-powerline"
 cask "gcc-arm-embedded"
 cask "secretive"
 cask "xcodes"
+mas "Keynote", id: 409183694
+mas "Notability", id: 736189492
+mas "NotePlan 3", id: 1505432629
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Shotty", id: 1250306151
