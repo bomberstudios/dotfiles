@@ -1,0 +1,15 @@
+[character]
+success_symbol = "[🍊](bold green) "
+error_symbol = "[🍋](bold red) "
+
+[cmd_duration]
+# disabled = false
+min_time = 0
+
+[git_branch]
+symbol = "🌱 "
+# truncation_length = 4
+# truncation_symbol = ""
+
+[git_status]
+disabled = true
