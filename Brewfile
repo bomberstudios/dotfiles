@@ -17,7 +17,7 @@ brew "php"
 brew "composer"
 brew "cvs"
 brew "deno"
-brew "docker-completion"
+# brew "docker-completion"
 brew "ffmpeg"
 brew "gh"
 brew "git"
@@ -38,13 +38,13 @@ brew "qmk/qmk/qmk", link: false
 brew "sidneys/homebrew/unrar"
 cask "android-commandlinetools"
 cask "android-platform-tools"
-cask "font-source-code-pro-for-powerline"
 cask "gcc-arm-embedded"
 cask "secretive"
 cask "xcodes"
 mas "Hand Mirror", id: 1502839586
-mas "NextDNS", id: 1464122853
+mas "History Book", id: 1619241039
 mas "Keynote", id: 409183694
+mas "NextDNS", id: 1464122853
 mas "Notability", id: 360593530
 mas "NotePlan 3", id: 1505432629
 mas "Numbers", id: 409203825
