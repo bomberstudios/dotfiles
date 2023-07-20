@@ -101,8 +101,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-source /Users/ale/.docker/init-zsh.sh || true # Added by Docker Desktop
-
 # pnpm
 export PNPM_HOME="/Users/ale/Library/pnpm"
 case ":$PATH:" in
