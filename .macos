@@ -12,7 +12,7 @@ defaults write com.apple.dock "orientation" -string "left"
 defaults write com.apple.dock "tilesize" -int "42"
 
 # Dock: Restart it to apply changes
-killall Dock
+# killall Dock
 
 # Disable the character chooser popup when you hold a key
 defaults write -g ApplePressAndHoldEnabled -bool false
