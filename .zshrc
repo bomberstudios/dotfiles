@@ -2,7 +2,7 @@ source $HOME/.macos
 
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 
-export PATH=.:$(brew --prefix)/bin:$HOME/bin:$PATH
+export PATH=.:$(/opt/homebrew/bin/brew --prefix)/bin:$HOME/bin:$PATH
 export EDITOR="$(which code) -w"
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
