@@ -1,14 +1,11 @@
 source $HOME/.macos
 
-# eval "$(/opt/homebrew/bin/brew shellenv)"
-
 export PATH=.:$(/opt/homebrew/bin/brew --prefix)/bin:$HOME/bin:$PATH
 export EDITOR="$(which code) -w"
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
 
-alias la='ls -la'
-# alias ..='cd ..' # replaced with zsh's `setopt AUTO_CD`
+alias la='ls -la --color=auto'
 alias o='open .'
 alias f='open . -a Fork'
 alias dl='cd $HOME/Downloads'
@@ -16,8 +13,14 @@ alias tmp='cd $HOME/tmp'
 alias c='code .'
 alias kb='make keyboardio/atreus:bomberstudios ferris/sweep:bomberstudios crkbd:bomberstudios preonic:bomberstudios'
 alias mm='make down && make start'
+if command -v bat &> /dev/null; then
+  alias cat='bat'
+fi
 
 # Completion
+fpath=(~/.zsh/completion $fpath)
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
 # case insensitive path-completion (from https://scriptingosx.com/2019/07/moving-to-zsh-part-5-completions/)
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 # partial completion suggestions (so cd c/w/s <tab> completes to cd Code/w/Skecth)
@@ -60,17 +63,12 @@ alias P='git push'
 eval "$(gh completion -s zsh)"
 
 # Homebrew
-# alias ibrew='arch -x86_64 /usr/local/bin/brew'
-alias bup='brew update && brew upgrade && brew cleanup'
+alias bup='brew update && brew upgrade --greedy && brew cleanup --prune=all'
 
-# if type ibrew &>/dev/null; then
-#   FPATH=$(ibrew --prefix)/share/zsh/site-functions:$FPATH
-# fi
+
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
-autoload -Uz compinit
-compinit
 
 # jog https://github.com/natethinks/jog
 function zshaddhistory() {
@@ -82,35 +80,8 @@ export SSH_AUTH_SOCK=/Users/ale/Library/Containers/com.maxgoedjen.Secretive.Secr
 
 eval "$(starship init zsh)"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # https://github.com/zsh-users/zsh-autosuggestions/
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# bun completions
-[ -s "/Users/ale/.bun/_bun" ] && source "/Users/ale/.bun/_bun"
-
-# bun
-export BUN_INSTALL="/Users/ale/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# pnpm
-export PNPM_HOME="/Users/ale/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-# nvm use when changing dir - place this after nvm initialization!
-autoload -U add-zsh-hook
 
 load-nvmrc() {
   local nvmrc_path
@@ -131,5 +102,7 @@ load-nvmrc() {
   fi
 }
 
+# nvm use when changing dir - place this after nvm initialization!
+autoload -U add-zsh-hook
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
