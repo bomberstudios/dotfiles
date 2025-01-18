@@ -1,0 +1,43 @@
+# Fonts
+font-family = "IBM Plex Mono"
+font-family-bold = "IBM Plex Mono Bold"
+font-family-italic = "IBM Plex Mono Bold"
+font-family-bold-italic = "IBM Plex Mono Bold Italic"
+font-synthetic-style = no-bold,no-italic,no-bold-italic
+font-size = 16
+font-thicken = false
+window-inherit-font-size = false
+
+# Cursor
+adjust-cursor-thickness = 4
+cursor-color = #ff6600
+cursor-style = bar
+cursor-style-blink = true
+cursor-click-to-move = true
+mouse-hide-while-typing = true
+
+# Colors
+theme = ChallengerDeep
+selection-foreground = #ffffff
+selection-background = #ff6600
+minimum-contrast = 2
+window-colorspace = display-p3
+bold-is-bright = true
+
+# Layout
+window-padding-x = 16
+window-padding-y = 16
+window-inherit-working-directory = true
+window-height = 999
+window-width = 999
+macos-titlebar-style = tabs
+macos-icon = custom-style
+macos-icon-frame = aluminum
+macos-icon-ghost-color = #ff6600
+macos-icon-screen-color = #ff6600
+
+# Behaviors
+copy-on-select = true
+
+# Quick terminal
+quick-terminal-animation-duration = 0.1
