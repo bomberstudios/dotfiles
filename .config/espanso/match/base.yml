@@ -1,0 +1,17 @@
+matches:
+  - triggers:
+    - ":date"
+    - ":now"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  - trigger: ":@@"
+    replace: "bomberstudios@gmail.com"
+  - trigger: ":gh"
+    replace: "github.com/bomberstudios"
+  - trigger: ":me"
+    replace: "github.com/bomberstudios/me"
