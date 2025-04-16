@@ -17,6 +17,7 @@ cask "fork" # git client
 cask "iina" # video player
 cask "latest" # download latest version of apps
 cask "maccy" # clipboard manager
+cask "shottr" # screenshot util
 cask "secretive"
 cask "slack"
 cask "visual-studio-code"
